@@ -1,4 +1,14 @@
 /* Base Styles */
+
+html, body {
+  -ms-overflow-style: none;
+  scrollbar-width: none;
+}
+
+body::-webkit-scrollbar {
+  display: none;
+}
+
 body {
     color: white;
     overflow-x: hidden;
@@ -710,3 +720,4 @@ body::before {
     color: rgba(255, 255, 255, 0.4);
     margin: 0 0.5rem;
 }
+
