@@ -341,13 +341,23 @@ a {
 
 .content-panel {
     position: relative;
-    padding: 2.4rem;
-    margin-top: 2rem;
-    border: 1px solid var(--border);
-    border-radius: var(--radius-xl);
-    background: linear-gradient(180deg, rgba(29, 31, 41, 0.82), rgba(20, 22, 32, 0.75));
-    backdrop-filter: blur(22px);
-    box-shadow: var(--shadow);
+    padding: 3.2rem 0 1.2rem;
+    margin-top: 3rem;
+    border: 0;
+    border-radius: 0;
+    background: transparent;
+    backdrop-filter: none;
+    box-shadow: none;
+}
+
+.content-panel::before {
+    content: "";
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 1px;
+    background: linear-gradient(90deg, rgba(255, 255, 255, 0.14), rgba(255, 255, 255, 0.05) 55%, transparent);
 }
 
 .section-intro {
@@ -355,7 +365,7 @@ a {
     grid-template-columns: minmax(0, 1fr) minmax(0, 0.9fr);
     gap: 1.5rem;
     align-items: end;
-    margin-bottom: 2rem;
+    margin-bottom: 2.6rem;
 }
 
 .section-header {
@@ -370,22 +380,38 @@ a {
     max-width: 36rem;
 }
 
+.section-intro > :last-child {
+    position: relative;
+    padding-top: 1rem;
+}
+
+.section-intro > :last-child::before {
+    content: "";
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 1px;
+    background: rgba(255, 255, 255, 0.1);
+}
+
 .info-box,
 .feature-card,
 .project-card,
 .timeline-item,
 .gallery-card,
 .accordion-item {
-    border: 1px solid var(--border);
-    background: linear-gradient(180deg, rgba(255, 255, 255, 0.035), rgba(255, 255, 255, 0.02));
-    box-shadow: inset 0 1px 0 rgba(255, 255, 255, 0.03);
+    border: 0;
+    background: transparent;
+    box-shadow: none;
 }
 
 .info-box {
-    padding: 1.4rem 1.5rem;
-    border-radius: var(--radius-md);
-    border-left: 3px solid var(--primary);
-    margin-bottom: 2rem;
+    max-width: 46rem;
+    padding: 0;
+    border-radius: 0;
+    margin-bottom: 2.5rem;
+    position: relative;
 }
 
 .info-box h3 {
@@ -397,7 +423,8 @@ a {
 .about-grid {
     display: grid;
     grid-template-columns: minmax(0, 1.15fr) minmax(280px, 0.7fr);
-    gap: 1.6rem;
+    gap: 2.5rem;
+    align-items: start;
 }
 
 .accordion-column {
@@ -407,20 +434,21 @@ a {
 
 .accordion-item {
     overflow: hidden;
-    border-radius: var(--radius-md);
-    transition: transform 220ms ease, border-color 220ms ease;
+    border-radius: 0;
+    transition: transform 220ms ease, opacity 220ms ease;
+    opacity: 0.8;
 }
 
 .accordion-item.active {
-    border-color: rgba(221, 183, 255, 0.22);
+    opacity: 1;
 }
 
 .accordion-header {
     width: 100%;
-    padding: 1.2rem 1.4rem;
+    padding: 1.35rem 0;
     color: var(--text);
     border: 0;
-    background: rgba(255, 255, 255, 0.03);
+    background: transparent;
     display: flex;
     align-items: center;
     justify-content: space-between;
@@ -428,6 +456,7 @@ a {
     cursor: pointer;
     text-align: left;
     font: inherit;
+    border-bottom: 1px solid rgba(255, 255, 255, 0.08);
 }
 
 .accordion-label {
@@ -442,13 +471,13 @@ a {
 .accordion-content {
     max-height: 0;
     overflow: hidden;
-    padding: 0 1.4rem;
+    padding: 0;
     transition: max-height 260ms ease, padding 260ms ease;
 }
 
 .accordion-item.active .accordion-content {
     max-height: 22rem;
-    padding: 0.2rem 1.4rem 1.3rem;
+    padding: 1rem 0 1.5rem;
 }
 
 .tech-stack {
@@ -466,21 +495,22 @@ a {
     border-radius: 999px;
     color: var(--text);
     font-size: 0.9rem;
-    background: rgba(221, 183, 255, 0.07);
-    border: 1px solid rgba(221, 183, 255, 0.12);
+    background: rgba(255, 255, 255, 0.06);
+    border: 0;
 }
 
 .portrait-card {
-    padding: 1.25rem;
-    border-radius: calc(var(--radius-xl) - 4px);
+    padding: 0;
+    border-radius: 0;
     align-self: start;
 }
 
 .portrait-media {
     aspect-ratio: 4 / 5;
     overflow: hidden;
-    border-radius: calc(var(--radius-lg) - 4px);
+    border-radius: 2rem;
     background: rgba(255, 255, 255, 0.03);
+    border: 1px solid rgba(255, 255, 255, 0.08);
 }
 
 .portrait-image {
@@ -490,25 +520,28 @@ a {
 }
 
 .feature-card-copy {
-    padding: 1rem 0.4rem 0.2rem;
+    padding: 1.2rem 0 0.2rem;
+    border-top: 1px solid rgba(255, 255, 255, 0.08);
+    margin-top: 1rem;
 }
 
 .experience-layout {
     display: grid;
     grid-template-columns: minmax(0, 1.1fr) minmax(300px, 0.9fr);
-    gap: 1.8rem;
+    gap: 2.5rem;
 }
 
 .timeline {
     display: grid;
-    gap: 1rem;
+    gap: 2rem;
 }
 
 .timeline-item {
     position: relative;
-    padding: 1.6rem;
-    border-radius: var(--radius-lg);
-    transition: transform 220ms ease, border-color 220ms ease;
+    padding: 0 0 0 1.4rem;
+    border-radius: 0;
+    transition: transform 220ms ease, opacity 220ms ease;
+    opacity: 0.84;
 }
 
 .timeline-item:hover,
@@ -516,7 +549,29 @@ a {
 .gallery-card:hover,
 .portrait-card:hover,
 .accordion-item:hover {
-    border-color: var(--border-strong);
+    opacity: 1;
+}
+
+.timeline-item::before {
+    content: "";
+    position: absolute;
+    left: 0;
+    top: 0.35rem;
+    width: 2px;
+    height: calc(100% - 0.35rem);
+    background: linear-gradient(180deg, var(--secondary), rgba(255, 255, 255, 0.06));
+}
+
+.timeline-item::after {
+    content: "";
+    position: absolute;
+    left: 0;
+    top: 0.2rem;
+    width: 0.5rem;
+    height: 0.5rem;
+    border-radius: 999px;
+    background: var(--secondary);
+    box-shadow: 0 0 0 6px rgba(93, 230, 255, 0.08);
 }
 
 .timeline-item h3 {
@@ -532,7 +587,7 @@ a {
 
 .experience-gallery {
     display: grid;
-    gap: 1rem;
+    gap: 1.3rem;
     align-content: start;
 }
 
@@ -540,7 +595,8 @@ a {
     position: relative;
     overflow: hidden;
     border-radius: var(--radius-lg);
-    transition: transform 220ms ease, opacity 220ms ease, border-color 220ms ease;
+    transition: transform 220ms ease, opacity 220ms ease;
+    border: 1px solid rgba(255, 255, 255, 0.08);
 }
 
 .gallery-card img {
@@ -552,7 +608,8 @@ a {
 }
 
 .gallery-copy {
-    padding: 1rem 1.15rem 1.2rem;
+    padding: 0.95rem 0.2rem 0;
+    border-top: 1px solid rgba(255, 255, 255, 0.08);
 }
 
 .gallery-copy p {
@@ -560,7 +617,7 @@ a {
 }
 
 .photo-item:not(.active-photo) {
-    opacity: 0.72;
+    opacity: 0.62;
 }
 
 .active-photo {
@@ -592,21 +649,34 @@ a {
 .project-grid {
     display: grid;
     grid-template-columns: repeat(12, minmax(0, 1fr));
-    gap: 1rem;
+    gap: 2.5rem 1.5rem;
 }
 
 .project-card {
-    padding: 1.55rem;
-    border-radius: var(--radius-lg);
-    transition: transform 220ms ease, border-color 220ms ease;
+    padding: 0;
+    border-radius: 0;
+    transition: transform 220ms ease, opacity 220ms ease;
+    opacity: 0.82;
+    padding-top: 1.15rem;
+    border-top: 1px solid rgba(255, 255, 255, 0.08);
 }
 
 .project-card.featured {
-    grid-column: span 12;
+    grid-column: span 7;
+    padding-right: 1rem;
+    margin-top: 0;
 }
 
 .project-grid .project-card:not(.featured) {
-    grid-column: span 6;
+    grid-column: span 5;
+}
+
+.project-grid .project-card:nth-child(2) {
+    margin-top: 4.2rem;
+}
+
+.project-grid .project-card:nth-child(3) {
+    margin-top: 1.4rem;
 }
 
 .project-card-top {
@@ -631,7 +701,11 @@ a {
 .awards-list {
     display: grid;
     grid-template-columns: repeat(2, minmax(0, 1fr));
-    gap: 1rem;
+    gap: 2rem 1.5rem;
+}
+
+.awards-list .project-card {
+    min-height: 100%;
 }
 
 .compact h3 {
@@ -739,12 +813,14 @@ a {
         grid-template-columns: 1fr;
     }
 
+    .project-card.featured,
     .project-grid .project-card:not(.featured) {
         grid-column: span 12;
     }
 
-    .awards-list {
-        display: grid;
+    .project-grid .project-card:nth-child(2),
+    .project-grid .project-card:nth-child(3) {
+        margin-top: 0;
     }
 }
 
@@ -770,7 +846,11 @@ a {
     }
 
     .content-panel {
-        padding: 1.35rem;
+        padding: 2.2rem 0 0.5rem;
+    }
+
+    .section-intro > :last-child {
+        padding-top: 0.8rem;
     }
 
     .hero-text,
