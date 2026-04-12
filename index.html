@@ -4,268 +4,332 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Vivi Huang - Portfolio</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@300;400;500;600;700&family=Space+Grotesk:wght@400;500;700&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
     <link rel="stylesheet" href="styles.css">
 </head>
 <body>
-    <div class="stars"></div>
-    
-    <nav class="sidebar">
-        <button class="nav-btn" data-section="about"><i class="fas fa-user"></i></button>
-        <button class="nav-btn" data-section="experience"><i class="fas fa-briefcase"></i></button>
-        <button class="nav-btn" data-section="projects"><i class="fas fa-code"></i></button>
-        <button class="nav-btn" data-section="awards"><i class="fas fa-trophy"></i></button>
+    <div class="stars" aria-hidden="true"></div>
+    <div class="orb orb-one" aria-hidden="true"></div>
+    <div class="orb orb-two" aria-hidden="true"></div>
+
+    <nav class="sidebar" aria-label="Section navigation">
+        <a class="nav-btn active" href="#hero" data-section="hero" aria-label="Home"><i class="fas fa-house"></i></a>
+        <a class="nav-btn" href="#about" data-section="about" aria-label="About"><i class="fas fa-user"></i></a>
+        <a class="nav-btn" href="#experience" data-section="experience" aria-label="Experience"><i class="fas fa-briefcase"></i></a>
+        <a class="nav-btn" href="#projects" data-section="projects" aria-label="Projects"><i class="fas fa-code"></i></a>
+        <a class="nav-btn" href="#awards" data-section="awards" aria-label="Awards"><i class="fas fa-trophy"></i></a>
     </nav>
 
-    <section class="parallax-bg">
-        <div class="header-content">
-            <h1 class="dynamic-title">Vivi Huang</h1>
-            <p class="tagline">Computer Engineering @ University of Waterloo</p>
-            <div class="social-container">
-                <a href="https://www.linkedin.com/in/vivi-huang-45254223b/" class="social-btn linkedin" target="_blank"><i class="fab fa-linkedin"></i></a>
-                <a href="https://github.com/Ctr-cv" class="social-btn github" target="_blank"><i class="fab fa-github"></i></a>
-            </div>
-        </div>
-        <img src="photos/resume-photo.png" 
-            alt="Download Resume" 
-            class="resume-float"
-            id="resume-download">
-        <img src="photos/astronaut2.png" 
-            alt="Astronaut" 
-            class="astronaut">
-    </section>
-
-    <!-- Content Sections -->
-    <section id="about" class="neon-card" data-section="about">
-        <h2 class="section-header" data-text="About Me"></h2>
-        <div class="info-box">
-            <h3>Hello and Welcome!</h3>
-            <p> Hello! My name is Vivi Huang, great to meet you! ٩(◕‿◕)۶ <br> Whether you're an employer, friend or my professor,
-                you're probably here to <u>learn a little <b>about me.</b></u> From my interesting facts to personal milestones, 
-                I've collected them all in this portfolio. <br> You can also view my resume by clicking the clipboard on the main page. Hope you enjoy! 
-            </p>
-        </div>
-        
-        <div class="about-container">
-            <!-- Left Column - Interactive Sections -->
-            <div class="about-content">
-                <div class="accordion-item">
-                    <button class="accordion-header">
-                        <span class="accordion-icon">👩‍🚀</span>
-                        <p>Who am I?</p>
-                    </button>
-                    <div class="accordion-content">
-                        <ul>
-                            <li>Engineer, scientist, and developer in training at <b>UWaterloo Computer Engineering</b></li>
-                            <li>Previous SDE intern at JD.com marketing backend team/li>
-                            <li>Driven by curiosity and love for problem solving - I don't stop until I find a solution.</li>
-                            <li>A little bit of competitive math & physics background</li>
-                        </ul>
-                    </div>
+    <main class="page-shell">
+        <section id="hero" class="parallax-bg hero-panel">
+            <div class="hero-copy">
+                <p class="eyebrow">Computer Engineering @ University of Waterloo</p>
+                <h1 class="dynamic-title">Vivi Huang</h1>
+                <p class="hero-text">
+                    Engineer, builder, and curious problem solver crafting thoughtful digital systems with a love for elegant interfaces and ambitious technical work.
+                </p>
+                <div class="hero-actions">
+                    <a class="primary-btn" href="#projects">Explore Projects</a>
+                    <a class="secondary-btn" href="#about">About Me</a>
                 </div>
-                
-                <div class="accordion-item">
-                    <button class="accordion-header">
-                        <span class="accordion-icon">💻</span>
-                        My Expertise
-                    </button>
-                    <div class="accordion-content">
-                        <div class="tech-stack">
-                            <span class="tech-item">C++</span>
-                            <span class="tech-item">Python + Django</span>
-                            <span class="tech-item">Java + SSM</span>
-                            <span class="tech-item">MySQL</span>
-                            <span class="tech-item">Git</span>
+                <div class="social-container">
+                    <a href="https://www.linkedin.com/in/vivi-huang-45254223b/" class="social-btn linkedin" target="_blank" rel="noreferrer" aria-label="LinkedIn"><i class="fab fa-linkedin-in"></i></a>
+                    <a href="https://github.com/Ctr-cv" class="social-btn github" target="_blank" rel="noreferrer" aria-label="GitHub"><i class="fab fa-github"></i></a>
+                </div>
+            </div>
+
+            <div class="hero-visual">
+                <button class="resume-card" id="resume-download" type="button" aria-label="Download resume">
+                    <img src="photos/resume-photo.png" alt="Resume preview" class="resume-float">
+                    <span class="resume-chip">Download Resume</span>
+                </button>
+                <img src="photos/astronaut2.png" alt="Astronaut illustration" class="astronaut">
+            </div>
+        </section>
+
+        <section id="about" class="content-panel" data-section="about">
+            <div class="section-intro">
+                <p class="section-kicker">Introduction</p>
+                <h2 class="section-header">About Me</h2>
+                <p class="section-summary">
+                    The original welcome, reframed in a cleaner and more editorial layout.
+                </p>
+            </div>
+
+            <div class="info-box">
+                <h3>Hello and Welcome!</h3>
+                <p>
+                    Hello! My name is Vivi Huang, great to meet you! Whether you're an employer, friend, or my professor,
+                    you're probably here to <u>learn a little <b>about me</b></u>. From interesting facts to personal milestones,
+                    I've collected them all in this portfolio. You can also view my resume by clicking the card on the main page.
+                    Hope you enjoy!
+                </p>
+            </div>
+
+            <div class="about-grid">
+                <div class="accordion-column">
+                    <article class="accordion-item active">
+                        <button class="accordion-header" type="button">
+                            <span class="accordion-label">Who am I?</span>
+                            <span class="accordion-meta">Profile</span>
+                        </button>
+                        <div class="accordion-content">
+                            <ul>
+                                <li>Engineer, scientist, and developer in training at <b>UWaterloo Computer Engineering</b></li>
+                                <li>Previous SDE intern at JD.com marketing backend team</li>
+                                <li>Driven by curiosity and problem solving; I do not stop until I find a solution</li>
+                                <li>Strong academic foundation in competitive mathematics and physics</li>
+                            </ul>
                         </div>
+                    </article>
+
+                    <article class="accordion-item">
+                        <button class="accordion-header" type="button">
+                            <span class="accordion-label">My Expertise</span>
+                            <span class="accordion-meta">Technical Focus</span>
+                        </button>
+                        <div class="accordion-content">
+                            <div class="tech-stack">
+                                <span class="tech-item">C++</span>
+                                <span class="tech-item">Python + Django</span>
+                                <span class="tech-item">Java + SSM</span>
+                                <span class="tech-item">MySQL</span>
+                                <span class="tech-item">Git</span>
+                            </div>
+                            <ul>
+                                <li>Worked on two co-op and internship experiences in web development</li>
+                                <li>Solid background in data structures, algorithms, and object-oriented programming</li>
+                                <li>Experience with AI web modules and LLM deployments using LangChain</li>
+                            </ul>
+                        </div>
+                    </article>
+
+                    <article class="accordion-item">
+                        <button class="accordion-header" type="button">
+                            <span class="accordion-label">Things to Know</span>
+                            <span class="accordion-meta">Highlights</span>
+                        </button>
+                        <div class="accordion-content">
+                            <ul>
+                                <li>I studied digital circuits and assembly programming at school</li>
+                                <li>Designed Smart Light, an STM32-based product that provides bright outdoor lighting with minimal power consumption</li>
+                                <li>Reached top 60 in AIME I 2021 and approximately top 200 in COMC 2022 in Canada</li>
+                                <li>I enjoy playing piano and oboe, as well as badminton in my free time</li>
+                            </ul>
+                        </div>
+                    </article>
+                </div>
+
+                <aside class="feature-card portrait-card">
+                    <div class="portrait-media">
+                        <img src="photos/resume-photo.png" alt="Vivi Huang portrait" class="portrait-image">
+                    </div>
+                    <div class="feature-card-copy">
+                        <p class="feature-card-label">Personal Note</p>
+                        <p>"Exploring cutting-edge technologies and research."</p>
+                    </div>
+                </aside>
+            </div>
+        </section>
+
+        <section id="experience" class="content-panel" data-section="experience">
+            <div class="section-intro">
+                <p class="section-kicker">Career Path</p>
+                <h2 class="section-header">Experiences</h2>
+                <p class="section-summary">
+                    Work across software, AI product development, and engineering research.
+                </p>
+            </div>
+
+            <div class="experience-layout">
+                <div class="timeline">
+                    <article class="timeline-item">
+                        <p class="timeline-tag">Jan 2025 - Apr 2025</p>
+                        <h3>SDE Intern @ <u>JD.com</u></h3>
                         <ul>
-                            <li>Worked on 2 co-op/internships in web-development</li>
-                            <li>Solid background in Data Structures & Algorithms and OOP programming</li>
-                            <li>Experience with AI web modules and LLM deployments using Langchain</li>
+                            <li>Marketing backend, handling 5M+ sales requests daily</li>
+                            <li>Assisted in developing alert listeners for an internal platform</li>
+                            <li>Collaborated with PMs, front-end engineers, and test engineers in a production team environment</li>
                         </ul>
-                    </div>
-                </div>
-                
-                <div class="accordion-item">
-                    <button class="accordion-header">
-                        <span class="accordion-icon">✨</span>
-                        Things to Know
-                    </button>
-                    <div class="accordion-content">
+                    </article>
+
+                    <article class="timeline-item">
+                        <p class="timeline-tag">May 2024 - Aug 2024</p>
+                        <h3>Full-Stack Developer @ <u>Adaptive Pulse</u></h3>
                         <ul>
-                            <li>I studied digital circuits and assembly-programming at school</li>
-                            <li>Designed Smart Light, a STM32-based product that provides bright outdoors lighting with minimal power consumption</li>
-                            <li>Reached top 60 in AIME I 2021 and app. top 200 in COMC 2022, in Canada</li>
-                            <li>I enjoy playing piano and oboe, as well as playing badminton in my rec times</li>
+                            <li>Contributed to front-end modules and AI summarization on the company webpage</li>
+                            <li>Used LangChain and the ChatGPT API to deploy a custom chatbot with prompt engineering support</li>
+                            <li>Parsed PDF, Word, and image inputs at high accuracy and generated client-facing PDF documents</li>
                         </ul>
+                    </article>
+
+                    <article class="timeline-item">
+                        <p class="timeline-tag">May 2023 - Aug 2023</p>
+                        <h3>Engineering Intern @ Chinese Academy of Sciences</h3>
+                        <ul>
+                            <li>Optimized the Deep-Sea Artificial Seabed computer system with structural improvements</li>
+                            <li>Improved chassis airflow by 60% and reduced temperature by up to 20%</li>
+                            <li>Modified designs in SolidWorks, tested in COMSOL, and collected data using Origin64</li>
+                        </ul>
+                    </article>
+                </div>
+
+                <div class="experience-gallery">
+                    <article class="gallery-card active-photo photo-item" data-index="0">
+                        <img src="photos/JD.png" alt="JD office at 8PM">
+                        <div class="gallery-copy">
+                            <p class="gallery-label">JD.com</p>
+                            <p>JD at 8PM</p>
+                        </div>
+                    </article>
+                    <article class="gallery-card photo-item" data-index="1">
+                        <img src="photos/adaptive_pulse.png" alt="Adaptive Pulse front page">
+                        <div class="gallery-copy">
+                            <p class="gallery-label">Adaptive Pulse</p>
+                            <p>Front-page of Adaptive Pulse</p>
+                        </div>
+                    </article>
+                    <article class="gallery-card photo-item" data-index="2">
+                        <img src="photos/ICCAS.png" alt="Chinese Academy of Sciences campus">
+                        <div class="gallery-copy">
+                            <p class="gallery-label">ICCAS</p>
+                            <p>One of ICCAS's campuses</p>
+                        </div>
+                    </article>
+                    <div class="photo-nav-dots" aria-label="Experience gallery navigation">
+                        <button class="dot active" type="button" data-target="0" aria-label="Show JD image"></button>
+                        <button class="dot" type="button" data-target="1" aria-label="Show Adaptive Pulse image"></button>
+                        <button class="dot" type="button" data-target="2" aria-label="Show ICCAS image"></button>
                     </div>
                 </div>
             </div>
-            
-            <!-- Right Column - Photo -->
-            <div class="about-photo">
-                <div class="photo-frame">
-                    <div class="photo-placeholder">
-                        <i class="fas fa-user-astronaut"></i>
-                        <p>Pretend there's a photo here...</p>
+        </section>
+
+        <section id="projects" class="content-panel" data-section="projects">
+            <div class="section-intro">
+                <p class="section-kicker">Selected Work</p>
+                <h2 class="section-header">Projects</h2>
+                <p class="section-summary">
+                    Original projects preserved, now presented with the calmer and more structured design language from the new concept.
+                </p>
+            </div>
+
+            <div class="info-box">
+                <p>Here are some of my recent projects. You can learn more by clicking their titles.</p>
+            </div>
+
+            <div class="project-grid">
+                <article class="project-card featured">
+                    <div class="project-card-top">
+                        <p class="project-label">Full-Stack Platform</p>
+                        <a href="https://github.com/Ctr-cv/" class="project-title" target="_blank" rel="noreferrer">
+                            <h3>QuickPlate</h3>
+                        </a>
                     </div>
-                    <div class="photo-caption">
-                        <p>"Exploring cutting-edge technologies and researches"</p>
+                    <p>
+                        Web project in development, based on SpringBoot + Vue.js. Full-stack management system including
+                        <u>order systems, delivery systems, and management</u> for customers, drivers, and restaurants.
+                    </p>
+                    <div class="tech-stack">
+                        <span class="tech-item">Java + SpringBoot</span>
+                        <span class="tech-item">Vue.js</span>
+                        <span class="tech-item">JavaScript</span>
+                        <span class="tech-item">TensorFlow</span>
+                        <span class="tech-item">SSM</span>
                     </div>
-                </div>
-            </div>
-        </div>
-    </section>
+                </article>
 
-    <!-------------------------- Experience Section ------------------------------->
-    <section id="experience" class="neon-card" data-section="experience">
-        <h2 class="section-header" data-text="Experiences"></h2>
-        
-        <div class="experience-container">
-            <!-- Left Column - Timeline -->
-            <div class="timeline">
-                <div class="timeline-item">
-                    <h3>SDE Intern @ <u>JD.com</u></h3>
-                    <p class="timeline-date">Jan 2025 - Apr 2025</p>
-                    <ul>
-                        <li>Marketing backend, handling 5M+ sales requests daily</li>
-                        <li>Assisted in developing alert listeners for an internal platform</li>
-                        <li>Collaborated and learned from professional team of PM, front-end and test engineers</li>
-                    </ul>
-                </div>
-                
-                <div class="timeline-item">
-                    <h3>Full-Stack Developer @ <u>Adaptive Pulse</u></h3>
-                    <p class="timeline-date">May 2024 - August 2024</p>
-                    <ul>
-                        <li>Group member in developing front-end modules and AI summarization in company webpage</li>
-                        <li>Used langchain and ChatGPT API to deploy a custom chatbot, with some prompt engineering in the background</li>
-                        <li>Parses pdf, word, images at high accuracy and generates PDF documents for clients</li>
-                    </ul>
-                </div>
-                
-                <div class="timeline-item">
-                    <h3>Engineering Intern @ Chinese Academy of Sciences</h3>
-                    <p class="timeline-date">May 2023 - August 2023</p>
-                    <ul>
-                        <li>Optimized Deep-Sea Artificial Seabed (DAS) computer system with structural improvements</li>
-                        <li>Altered design to allow 60% more airflow in computer chassis and up to 20% temperature decrease</li>
-                        <li>Modified using SolidWork, tested using COMSOL and collected data using Origin64</li>
-                    </ul>
-                </div>
-            </div>
-            
-            <!-- Right Column - Photos -->
-            <div class="experience-gallery">
-                <div class="photo-stack">
-                    <div class="photo-item photo-1 active-photo" data-index="0">
-                        <div class="photo-caption">JD at 8PM</div>
+                <article class="project-card">
+                    <div class="project-card-top">
+                        <p class="project-label">Student Collaboration</p>
+                        <a href="https://github.com/Ctr-cv/Study-Buddy" class="project-title" target="_blank" rel="noreferrer">
+                            <h3>Study-Buddy</h3>
+                        </a>
                     </div>
-                    <div class="photo-item photo-2" data-index="1">
-                        <div class="photo-caption">Front-page of Adaptive Pulse</div>
+                    <p>
+                        Communication platform made by students, for students. Supports a Discord-style chatroom, a forum,
+                        and study tags for all users. Built with Django and SQLite, with UI using Tailwind CSS.
+                    </p>
+                    <div class="tech-stack">
+                        <span class="tech-item">Python</span>
+                        <span class="tech-item">Django</span>
+                        <span class="tech-item">SQLite</span>
                     </div>
-                    <div class="photo-item photo-3" data-index="2">
-                        <div class="photo-caption">(one of) ICCAS's campus</div>
+                </article>
+
+                <article class="project-card">
+                    <div class="project-card-top">
+                        <p class="project-label">Embedded Systems</p>
+                        <a href="https://github.com/Ctr-cv/Smart-Light" class="project-title" target="_blank" rel="noreferrer">
+                            <h3>Smart Light</h3>
+                        </a>
                     </div>
-                </div>
-                <div class="photo-nav-dots">
-                    <span class="dot active" data-target="0"></span>
-                    <span class="dot" data-target="1"></span>
-                    <span class="dot" data-target="2"></span>
-                </div>
+                    <p>
+                        A durable and sustainable lighting product, functional anywhere from <u>-20 to 50 Celsius</u>
+                        with up to 1500 lumens of brightness. 90% of materials are environmentally friendly and recyclable.
+                    </p>
+                    <div class="tech-stack">
+                        <span class="tech-item">C</span>
+                        <span class="tech-item">C++</span>
+                        <span class="tech-item">STM32</span>
+                        <span class="tech-item">AutoCAD</span>
+                        <span class="tech-item">SolidWorks</span>
+                    </div>
+                </article>
             </div>
-        </div>
-    </section>
+        </section>
 
-    <!----------------------- Project Section------------------------>
-    <section id="projects" class="neon-card" data-section="projects">
-        <h2 class="section-header" data-text="Projects"></h2>
-        <div class = "info-box">
-            <p>Here are some of my recent projects! You can learn more by simply clicking their titles.</p>
-        </div>
-        <div class="project-card">
-            <a href="https://github.com/Ctr-cv/" class="project-title" target="_blank">
-                <h3>QuickPlate</h3>
-            </a>
-            <p>Web-project in development, based on SpringBoot + Vue.js <br>
-                Full-stack management system, including <u>order systems, delivery systems, and management</u> for customers, drivers and restaurants. <br> 
-            </p>
-            <div class="tech-stack">
-                <span class="tech-item">Java + SpringBoot</span>
-                <span class="tech-item">Vue.js</span>
-                <span class="tech-item">Javascript</span>
-                <span class="tech-item">TensorFlow</span>
-                <span class="tech-item">SSM</span>
+        <section id="awards" class="content-panel" data-section="awards">
+            <div class="section-intro">
+                <p class="section-kicker">Milestones</p>
+                <h2 class="section-header">Awards</h2>
+                <p class="section-summary">
+                    Competition and academic highlights preserved from the original portfolio.
+                </p>
             </div>
-        </div>
-        
-        <div class="project-card">
-            <a href="https://github.com/Ctr-cv/Study-Buddy" class="project-title" target="_blank">
-                <h3>Study-Buddy</h3>
-            </a>
-            <p>Communication platform made by students, for students. <br> 
-                Supports a discord-style chatroom, a forum, as well as study tags for all users. <br>
-                Built with basic Django and SQLite, with UI using TailwindCSS. 
-            </p>
-            <div class="tech-stack">
-                <span class="tech-item">Python</span>
-                <span class="tech-item">Django</span>
-                <span class="tech-item">SQLite</span>
+
+            <div class="info-box">
+                <p>
+                    Here are some of my past awards. If you're interested, some competition websites still have my name there,
+                    although it may take a bit of searching.
+                </p>
             </div>
-        </div>
 
-        <div class="project-card">
-            <a href="https://github.com/Ctr-cv/Smart-Light" class="project-title" target="_blank">
-                <h3>Smart Light</h3>
-            </a>
-            <p>A durable and sustainable lighting product. Functional anywhere from <u>-20 to 50 celsius</u> with up to 1500 lumens of brightness. 
-                <br>
-                90% of materials are environmentally friendly, and all can be recycled without harm to environment.
-            </p>
-            <div class="tech-stack">
-                <span class="tech-item">C</span>
-                <span class="tech-item">C++</span>
-                <span class="tech-item">STM32</span>
-                <span class="tech-item">AutoCAD</span>
-                <span class="tech-item">SolidWorks</span>
+            <div class="awards-list">
+                <article class="project-card compact">
+                    <p class="project-label">Mathematics</p>
+                    <h3>2021 American Invitational Mathematics Examination (AIME) Qualifier</h3>
+                    <p>Top 2.5% in AMC 10A 2021 with a score of 105, and top 60 in Canada in AIME I 2021 with an above-average score.</p>
+                </article>
+                <article class="project-card compact">
+                    <p class="project-label">Mathematics</p>
+                    <h3>2019-2022 Canadian Open Mathematics Challenge Honor Roll</h3>
+                    <p>BC Zone 2 Honor Roll for three out of four years, out of 10k+ participants worldwide. Highest score: 61.5/75, just 1.5 points from Repechage in 2022.</p>
+                </article>
+                <article class="project-card compact">
+                    <p class="project-label">Mathematics</p>
+                    <h3>2022-2023 Euclid International Honor Roll</h3>
+                    <p>Top 5% for two consecutive years worldwide, among the top 400 of over 20k participants. School ranked top 15 in Canada in 2022 with a total score of 265.</p>
+                </article>
+                <article class="project-card compact">
+                    <p class="project-label">Physics</p>
+                    <h3>2023 UBC Physics Olympics</h3>
+                    <p>Leader of the Aerodynamic Lab team in the 2023 contest, ranked 4th place among all schools and 3rd best team overall in Canada out of over 60 teams.</p>
+                </article>
             </div>
-        </div>
+        </section>
+    </main>
 
-    </section>
+    <footer class="cosmic-footer">
+        <div class="footer-content">
+            <p>Built with curiosity, iteration, and a love for elegant engineering.</p>
+            <p>Vivi Huang <span class="footer-divider">|</span> Portfolio</p>
+        </div>
+    </footer>
 
-    <section id="awards" class="neon-card" data-section="awards">
-        <h2 class="section-header" data-text="Awards"></h2>
-        <div class = "info-box">
-            <p>Here are some of my (past) awards! If you're interested, some competition websites still have my name there! <br>
-                <i>although it may take a bit of searching</i>
-            </p>
-        </div>
-        <div class="project-card">
-            <h3>🏆 2021 American Invitational Mathematics Examination (AIME) Qualifier</h3>
-            <p>Top 2.5% in AMC 10A, 2021 with a score of 105<br>
-                top 60 in Canada in AIME I, 2021 with an above-average score <br>
-            </p>
-        </div>
-        <div class="project-card">
-            <h3>🥇 2019-2022 Canadian Open Mathematics Challenge Honor Roll</h3>
-            <p>BC Zone 2 Honor Roll for 3 out of 4 years, out of 10k+ participants worldwide. <br>
-                highest score at 61.5/75, 1.5 point away from qualifying for Repechage in 2022. <br>
-            </p>
-        </div>
-        <div class="project-card">
-            <h3>🏅 2022-2023 Euclid International Honor Roll</h3>
-            <p> Top 5% for two consecutive years worldwide, among top 400 out of over 20k participants. <br>
-                School ranked top 15 in Canada in 2022, with a total score of 265. <br>
-            </p>
-        </div>
-
-        <div class="project-card">
-            <h3>🥉 2023 UBC Physics Olympics</h3>
-            <p> Leader of Aerodynamic Lab team in the 2023 contest, ranked 4th place out of all schools. <br>
-                Scored 3rd best team overall in Canada out of over 60 teams. <br>
-            </p>
-        </div>
-    </section>
     <script src="script.js"></script>
 </body>
 </html>
-
